@@ -20,6 +20,12 @@ class FromHereTest < Test::Unit::TestCase
         load FromHere.from_here('fixtures','canary.rb'){}
         assert_respond_to Canary, :tweet
       end
+
+      should 'raise a very specific error when called without a block' do
+        assert_raise FromHere::NoBlockError do
+          FromHere::from_here
+        end
+      end
     end
   end
 end
