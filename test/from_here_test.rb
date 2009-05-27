@@ -17,7 +17,7 @@ class FromHereTest < Test::Unit::TestCase
       end
 
       should 'find another file' do
-        load FromHere.from_here('fixtures','canary.rb')
+        load FromHere.from_here('fixtures','canary.rb'){}
         assert_respond_to Canary, :tweet
       end
     end
