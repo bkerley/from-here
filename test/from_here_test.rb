@@ -12,7 +12,7 @@ class FromHereTest < Test::Unit::TestCase
       end
       should 'find this test file' do
         this_file = File.join(File.dirname(__FILE__), File.basename(__FILE__))
-        found_file = FromHere.from_here{}
+        found_file = FromHere.from_here(File.basename(__FILE__)){}
         assert_equal this_file, found_file
       end
 
