@@ -7,6 +7,9 @@ module FromHere
 
   def self.from_here(*path, &block)
     raise NoBlockError unless block
+    if path.empty?
+      path = block.call
+    end
     File.join(
               File.dirname(eval('__FILE__', block.binding)),
               *path

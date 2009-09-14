@@ -7,9 +7,6 @@ class FromHereTest < Test::Unit::TestCase
     end
 
     context 'from_here method' do
-      should 'fail without a block' do
-
-      end
       should 'find this test file' do
         this_file = File.join(File.dirname(__FILE__), File.basename(__FILE__))
         found_file = FromHere.from_here(File.basename(__FILE__)){}
@@ -25,6 +22,12 @@ class FromHereTest < Test::Unit::TestCase
         assert_raise FromHere::NoBlockError do
           FromHere::from_here
         end
+      end
+
+      should 'work with the filename in the block' do
+        plain_from_here = FromHere.from_here('fixtures', 'canary.rb'){ }
+        block_from_here = FromHere.from_here{ 'fixtures/canary.rb' }
+        assert_equal plain_from_here, block_from_here
       end
     end
   end
