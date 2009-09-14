@@ -1,6 +1,14 @@
 = from-here
 
-Description goes here.
+from-here lets your file inclusion statements get surprisingly short:
+
+Old way:
+
+    require File.join(File.dirname(__FILE__), 'have-code', 'ar_code')
+
+from-here way:
+
+    require from_here('lib', 'bones.rb'){}
 
 == Copyright
 

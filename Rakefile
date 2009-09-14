@@ -5,11 +5,11 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "from-here"
-    gem.summary = %Q{TODO}
+    gem.summary = "Shorten your file inclusions with from-here"
     gem.email = "bkerley@brycekerley.net"
     gem.homepage = "http://github.com/bkerley/from-here"
     gem.authors = ["Bryce Kerley"]
-
+    gem.rubyforge_project = 'from-here'
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
 rescue LoadError
